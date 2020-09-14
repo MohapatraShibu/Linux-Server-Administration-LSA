@@ -14,18 +14,18 @@ Practical No: 1
 
 4. A DHCP server dynamically assigns an IP address and other network configuration parameters to each device on a network so they can communicate with other IP networks. 
 
-5. DHCP is an enhancement of an older protocol called BOOTP. DHCP is an important part of the DDI solution
+5. DHCP is an enhancement of an older protocol called BOOTP. DHCP is an important part of the DDI solution.
 
 
 • Features of DHCP can be expalined as:
 
-1. DHCPOFFER - The server will host(342 bytes)
+1. DHCPOFFER - The server will host (342 bytes).
 2. DHCPREQUEST - Client responds by broadcasting
-3. DHCPDISCOVER - First messag generated between server & client (342 or 576 bytes)
-4. DHCPDECLINE - If IP address already in use, DHCP declines server
-5. DHCPRELEASE - Client sends DHCP release packet to server to release IP address & cancel any remaining lease time
-6. DHCPINFORM - Domain name
-7. DHCPACK/DHCPNAK - Server will make entry [static ip to server]
+3. DHCPDISCOVER - First messag generated between server & client (342 or 576 bytes).
+4. DHCPDECLINE - If IP address already in use, DHCP declines server.
+5. DHCPRELEASE - Client sends DHCP release packet to server to release IP address & cancel any remaining lease time.
+6. DHCPINFORM - Domain name.
+7. DHCPACK/DHCPNAK - Server will make entry [static ip to server].
 
 
 • Steps:
@@ -40,7 +40,7 @@ Practical No: 1
    shibu@kali:~$ ip a	(OR)
    shibu@kali:~$ ip addr
 
-4. Then we configure the subnet and the netmask, after configuring it then save the file and exit. ([esc] :wq!)
+4. Then we configure the subnet and the netmask, after configuring it then save the file and exit. (press[esc] and :wq!)
 
 5. To enable the services, use the command given below: 
    shibu@kali:~$ sudo systemctl enable isc-dhcp-server.service
