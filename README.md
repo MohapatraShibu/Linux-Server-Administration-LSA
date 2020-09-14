@@ -1,2 +1,2 @@
 # Linux Server Administration
-All LSA practicals can be found in this repository. 
+All the LSA practicals that are performed can be found in this repository. 
