@@ -1,0 +1,45 @@
+Aim: Install DHCP Server.
+
+• Aim: Install DHCP server.
+
+• DHCP(Theory):
+
+1. Dynamic Host Configuration Protocol Daemon (DHCPD), the DHCP server, is responsible for serving IP addresses and other relevant information upon client request. 
+
+2. Since DHCP is broadcast-based, a server will have to be present on each subnet for which DHCP service is to be provided.
+
+3. Dynamic Host Configuration Protocol (DHCP) is a network management protocol used to automate the process of configuring devices on IP networks, thus allowing them to use network services such as DNS, NTP, and any communication protocol based on UDP or TCP. 
+
+4. A DHCP server dynamically assigns an IP address and other network configuration parameters to each device on a network so they can communicate with other IP networks. 
+
+5. DHCP is an enhancement of an older protocol called BOOTP. DHCP is an important part of the DDI solution
+
+• Features of DHCP can be expalined as:
+
+1. DHCPOFFER - The server will host(342 bytes)
+2. DHCPREQUEST - Client responds by broadcasting
+3. DHCPDISCOVER - First messag generated between server & client (342 or 576 bytes)
+4. DHCPDECLINE - If IP address already in use, DHCP declines server
+5. DHCPRELEASE - Client sends DHCP release packet to server to release IP address & cancel any remaining lease time
+6. DHCPINFORM - Domain name
+7. DHCPACK/DHCPNAK - Server will make entry [static ip to server]
+
+• Steps:
+
+1. Command to install dhcp-server:
+   shibu@kali:~$ sudo apt-get install -y isc-dhcp-server
+
+2. Then we need to configure our dhcpd.conf by directly editing through a path, the path is given below: 
+   $sudo nano /etc/dhcp/dhcpd.conf
+
+3. To know about ip address of our machine the following command can be given as: 
+   shibu@kali:~$ ip a	(OR)
+   shibu@kali:~$ ip addr
+
+4. Then we configure the subnet and the netmask, after configuring it then save the file and exit. ([esc]:wq!)
+
+5. To enable the services, use the command given below: 
+   shibu@kali:~$ sudo systemctl enable isc-dhcp-server.service
+
+6. Then start the service by typing the command below: 
+   shibu@kali:~$ sudo systemctl start isc-dhcp-server.service
