@@ -16,16 +16,15 @@ Practical No: 2
       
 2. Network settings: 
    The ip address, ethernet connections and other network connections can be seen throgh using the command: 
-   
    shibu@kali:~$ sudo ip a   	(OR)  
    shibu@kali:~$ sudo ip addr
     
 
 3. Configuring services: 
-   The services that run in the background are also known as daemons, services usually have a 'd' in last of their name to identify it as a daemon. 
+   The services that run in the background are also known as daemons, services usually have a 'd' in last of their name, this denotes as a daemon. 
    
    For example - smbd, nmbd, etc
-   The services are available in the /etc/ folder as mostly the services are available there 
+   The services are available in the /etc/ folder as mostly the services are available there.
    
    For example: 
    shibu@kali:~$ sudo view /etc/dhcp/dhcpd.conf 
