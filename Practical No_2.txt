@@ -1,0 +1,65 @@
+Practical No: 2
+
+
+1. Addng a user: 
+   A user is one who works on the machine simultaneously or it has the permissions to read, write and execute one file or all files.
+   A user can be added individually or in a group.
+   
+   For addng a user individually, the command is : 
+   $sudo adduser <username>
+      
+   Example: 
+   shibu@kali:~$ sudo adduser lsa_user
+
+      
+2. Network settings: The ip address, ethernet connections and other network connections can be seen throgh using the command: 
+   shibu@kali:~$ sudo ip a   	(OR)  
+   shibu@kali:~$ sudo ip addr
+    
+
+3. Configuring services: 
+   The services that run in the background are also known as daemons, services usually have a 'd' in last of their name to identify it as a daemon. 
+   
+   For example - smbd nmbd,etc
+   The services are available in the /etc/ folder as mostly the services are available there 
+   
+   For example: 
+   shibu@kali:~$ sudo view /etc/dhcp/dhcpd.conf 
+  
+  
+4. List of services running: The command to list the currently active and running services can be done:- 
+   $sudo systemctl
+
+a. Command to enable a service:                 
+   $sudo systemctl enable <service_name>
+
+   Example:
+   shibu@kali:~$ sudo systemctl enable ssh
+
+
+b. Command to start a service:                  
+   $sudo systemctl start <service_name>
+
+   Example:
+   shibu@kali:~$ sudo systemctl start ssh
+
+
+c. Command to check the status of a service:    
+   $sudo systemctl status <service_name>
+
+   Example:
+   shibu@kali:~$ sudo systemctl status ssh
+
+
+d. Command to stop a service:                   
+   $sudo systemctl stop <service_name>
+
+   Example:
+   shibu@kali:~$ sudo systemctl stop ssh
+
+
+e. Command to auto-start a service: 
+   $sudo systemctl restart <service_name>
+
+   Example:
+   shibu@kali:~$ sudo systemctl restart ssh
