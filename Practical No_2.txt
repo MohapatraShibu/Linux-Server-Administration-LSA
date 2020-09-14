@@ -1,5 +1,7 @@
 Practical No: 2
 
+• Aim: Initial settings: Add a user, Network settings, Configure services and List of services.
+
 
 1. Addng a user: 
    A user is one who works on the machine simultaneously or it has the permissions to read, write and execute one file or all files.
