@@ -66,5 +66,5 @@ d. Command to stop a service:
 e. Command to auto-start a service: 
    $sudo systemctl restart <service_name>
 
-   Example:
+   Example:-
    shibu@kali:~$ sudo systemctl restart ssh
