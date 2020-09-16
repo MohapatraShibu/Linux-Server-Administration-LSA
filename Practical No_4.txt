@@ -22,7 +22,7 @@ Practical No: 4
 
 1. SSH client connection - Port number: 22
 2. Telnet  client connection - Port number: 23
-   If we need to change, enter port number between 1024 and 32767
+   If we need to change, enter port number between 1024 and 32767.
 
 
 • Steps and Commands:
@@ -54,5 +54,5 @@ Note: To be on the safe side, user can install ufw (Uncomplicated Firewall),
    shibu@kali:~$ ssh localhost		(OR)
    shibu@kali:~$ ssh 127.0.0.1
 
-After this user can enter the root password to connect to the localhost
+After this user can enter the root password to connect to the localhost.
 
