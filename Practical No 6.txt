@@ -1,4 +1,4 @@
-Practical No: 5
+Practical No: 6
 
 • Aim: Configure NFS server to share directories or files on your network.
 
