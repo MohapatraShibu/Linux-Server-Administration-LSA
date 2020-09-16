@@ -3,7 +3,7 @@ Practical No: 1
 • Aim: Install DHCP server.
 
 
-• DHCP(Theory):
+• DHCP (Description):
 
 1. Dynamic Host Configuration Protocol Daemon (DHCPD), the DHCP server, is responsible for serving IP addresses and other relevant information upon client request. 
 
