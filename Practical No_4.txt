@@ -14,7 +14,7 @@ Practical No: 4
 4. The SSH command provides a secure encrypted connection between two hosts over an insecure network.
    The connection can also be used for terminal access, file transfers & for tunelling other applications.
 
-5. OpenSSH - Open Source Implementation
+5. OpenSSH - Open Source Implementations 
    SSH provides an authentication mechanism based on cryptographic keys, called the "Public Key Authentication".
 
 
@@ -37,7 +37,7 @@ Practical No: 4
 
 Now if there is any configuration to be changed, then it can be changed from the sshd file.
 
-3. Command to status a service:  
+3. Command to check the status of a service:  
    shibu@kali:~$ sudo systemctl status ssh
 
 
