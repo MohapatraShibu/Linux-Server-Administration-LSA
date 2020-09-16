@@ -1,0 +1,58 @@
+Practical No: 4
+
+• Aim: SSH Server: Password Authentication Configure SSH server.
+
+
+• Decription:
+
+1. SSH Stands for - Secured Shell.
+
+2. To tackle the issue of remote login vs password security a solution called Secured Shell (SSH) was developed.
+
+3. It is a suite of network communication tools that are collectively based on protocol/standard i.e. guided by Internet Engineering Task Force (IETF).
+
+4. The SSH command provides a secure encrypted connection between two hosts over an insecure network.
+   The connection can also be used for terminal access, file transfers & for tunelling other applications.
+
+5. OpenSSH - Open Source Implementation
+   SSH provides an authentication mechanism based on cryptographic keys, called the "Public Key Authentication".
+
+
+• Port:
+
+1. SSH client connection - Port number: 22
+2. Telnet  client connection - Port number: 23
+   If we need to change, enter port number between 1024 and 32767
+
+
+• Steps and Commands:
+
+1. Command to install ssh server:
+   shibu@kali:~$ sudo dpkf -l openssh-server		(OR)
+
+   shibu@kali:~$ sudo apt-get -y install openssh-server
+
+2. Command to enable a service:  
+   shibu@kali:~$ sudo systemctl enable ssh
+
+Now it there is any configuration to be changed, then it can be changed from the sshd file
+
+3. Command to status a service:  
+   shibu@kali:~$ sudo systemctl status ssh
+
+
+Note: To be on the safe side, user can install ufw (Uncomplicated Firewall),
+      ufw provides a user friendly way to create an IPv4 or IPv6 host-based firewall.
+
+      To install ufw, the command is:
+      shibu@kali:~$ sudo apt-get -y install ufw
+
+4. Now To configure user's server to allow incoming SSH connections, user can use this command: 
+   shibu@kali:~$ sudo ufw allow ssh
+
+5. After this user can connect to the ssh localhost by the command:
+   shibu@kali:~$ ssh localhost		(OR)
+   shibu@kali:~$ ssh 127.0.0.1
+
+After this user can enter the root password to connect to the localhost
+
