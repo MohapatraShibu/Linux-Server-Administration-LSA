@@ -35,7 +35,7 @@ Practical No: 4
 2. Command to enable a service:  
    shibu@kali:~$ sudo systemctl enable ssh
 
-Now it there is any configuration to be changed, then it can be changed from the sshd file
+Now if there is any configuration to be changed, then it can be changed from the sshd file.
 
 3. Command to status a service:  
    shibu@kali:~$ sudo systemctl status ssh
@@ -55,4 +55,3 @@ Note: To be on the safe side, user can install ufw (Uncomplicated Firewall),
    shibu@kali:~$ ssh 127.0.0.1
 
 After this user can enter the root password to connect to the localhost.
-
