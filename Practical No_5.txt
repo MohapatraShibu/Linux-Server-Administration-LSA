@@ -1,0 +1,124 @@
+Practical No: 5
+
+• Aim: Install Samba to share folders or files between Windows and Linux.
+
+
+• Description:
+
+1. Samba is an open source implementation of the Server Message Block/Common Internet File System (SMB/CIFS) protocol suite.
+
+2. Samba transparently provides file and print sharing services to Windows clients as well as other networked clients running other operating systems. 
+
+3. It does this through the use of the native Microsoft networking protocols SMB/CIFS. 
+
+4. From a system administrator’s point of view, 
+   this means you can deploy a Linux/UNIX-based server without having to install Network File System (NFS) and some kind of 
+   Linux/UNIXcompatible authentication support on all the Windows clients in the network.
+
+5. Instead, the clients can use their native tongue to talk to the server—which means fewer hassles for you and seamless integration for your users.
+
+
+• Steps and commands (Kali Linux part):
+
+1. First we need to install Samba Server:
+   shibu@kali:~$ sudo apt-get -y install samba
+
+2. Then we need to start samba service:
+   shibu@kali:~$ sudo systemctl start smbd
+
+3. Then we need to check the status samba service:
+   shibu@kali:~$ sudo systemctl status smbd
+
+4. Then we need to start nmbd service:
+   shibu@kali:~$ sudo systemctl start nmbd
+
+5. Then we need to start nmbd service:
+   shibu@kali:~$ sudo systemctl status nmbd
+
+6. First we make a samba_shared directory in /home/shibu  
+
+7. Then we make few txt files in /home/shibu/samba_shared 
+   shibu@kali:~$ touch a.txt b.txt c.txt
+
+8. Now,
+   shibu@kali:~$ cd /etc/samba
+   shibu@kali:~$ ls /etc/samba
+
+9. Now take the backup of smb.conf 
+   shibu@kali:~$ cp smb.conf smb.conf_bkp 
+
+10. Now we need to do few configuration in /etc/smb.conf
+   shibu@kali:~$ sudo nano smb.conf
+
+11. Then delete all the things inside smb.conf and then write:
+
+    [samba_shared]
+	comment = Welcome to samba
+	path = /home/shibu/samba_shared
+	browseable = yes
+	read only = yes
+	guest ok = no
+
+Then ctrl x and then y and save the file. 
+
+12. Now download smbclient if not there then the command is:
+    shibu@kali:~$ sudo apt-get -y install smbclient
+
+13. Now start/stop services of both smbd and nmbd
+    shibu@kali:~$ sudo systemctl start smbd
+    shibu@kali:~$ sudo systemctl stop nmbd
+
+Also, check both smbd and nmbd statuses too
+
+14. First do: 
+    shibu@kali:~$ whoami
+
+15. And then: 
+    shibu@kali:~$ sudo pdbedit -a -u $(whoami)
+
+16. Type and retype your password:
+    shibu@kali:~$ sudo pdbedit -L (to check all users)
+
+17. This will make any connectionn possible to connect:
+    $ sudo ufw allow from (your ip addr) any app Samba
+
+    In my case it was:
+    shibu@kali:~$ sudo ufw allow from 192.168.56.0/24 to any app Samba
+
+18. To check for your ip then use this command : 
+    shibu@kali:~$ ip a 		(OR) 
+    shibu@kali:~$ ip addr
+
+19. Now to reload your firewall use:
+    shibu@kali:~$ sudo ufw reload  
+
+20. To check whether it's working or not, use:
+    $ sudo smbcllient -U <username> -L  //your ip
+
+    My username was:
+    shibu@kali:~$ sudo smbcllient -U shibu -L  //192.168.56.101
+
+21. Now restart both smbd and nmbd services:
+    shibu@kali:~$ sudo systemctl restart smbd
+    shibu@kali:~$ sudo systemctl restart nmbd
+
+22. Do also check their status 
+    shibu@kali:~$ sudo systemctl status smbd
+    shibu@kali:~$ sudo systemctl status nmbd
+
+
+• Windows OS Part:
+
+1. Once smbd and nmbd services are active now switch back to your windows OS and press windows + R key on keyboard and 
+   now a pop up box will open and their write smbclient ip address, 
+   here in my case it was //192.168.56.101 and press OK.
+
+2. Now again one more pop up box will open, write the credentials of your Windows or Kali or whatever it would be.
+
+3. Now in top of the address bar you can see Network > 192.168.56.101 (your ip address)
+   in this you can see samba_shared and documents folder.
+
+4. In samba_shared server you can see all the txt files that we've made earlier, using touch command.
+
+5. Once all your samba_shared files are visible in windows, then the sharing of files/folders have been 
+   successfully done between Windows and Kali Linux.
