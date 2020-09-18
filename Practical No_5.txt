@@ -13,7 +13,7 @@ Practical No: 5
 
 4. From a system administrator’s point of view, 
    this means you can deploy a Linux/UNIX-based server without having to install Network File System (NFS) and some kind of 
-   Linux/UNIXcompatible authentication support on all the Windows clients in the network.
+   Linux/UNIX compatible authentication support on all the Windows clients in the network.
 
 5. Instead, the clients can use their native tongue to talk to the server—which means fewer hassles for you and seamless integration for your users.
 
