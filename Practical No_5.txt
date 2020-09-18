@@ -95,7 +95,7 @@ Also, check both smbd and nmbd statuses too
 20. To check whether it's working or not, use:
     $ sudo smbcllient -U <username> -L  //your ip
 
-    My username was:
+    In my case it was:
     shibu@kali:~$ sudo smbcllient -U shibu -L  //192.168.56.101
 
 21. Now restart both smbd and nmbd services:
