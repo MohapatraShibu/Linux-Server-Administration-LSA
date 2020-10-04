@@ -28,7 +28,7 @@ Practical No: 4
 • Steps and Commands:
 
 1. Command to install ssh server:
-   shibu@kali:~$ sudo dpkf -l openssh-server		(OR)
+   shibu@kali:~$ sudo dpkg -l openssh-server		(OR)
 
    shibu@kali:~$ sudo apt-get -y install openssh-server
 
