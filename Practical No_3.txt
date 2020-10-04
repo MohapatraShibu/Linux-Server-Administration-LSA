@@ -75,6 +75,6 @@ Note: Before mounting make sure that the user have made a directory to mount the
 7. Now to mount the file:
    shibu@kali:~$ sudo mount -t nfs 127.0.01:/home/shibu/demo_dir /home/shibu_directory
 
-8. Lastly, then the user can check for the mounted file in the directory that user has made:
+8. Lastly, then the user can check for the mounted file in the directory that user has made:-
    shibu@kali:~$ cd /home/shibu_directory
    ls
