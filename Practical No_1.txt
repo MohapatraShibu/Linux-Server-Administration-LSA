@@ -21,7 +21,7 @@ Practical No: 1
 
 1. DHCPOFFER - The server will host (342 bytes).
 2. DHCPREQUEST - Client responds by broadcasting
-3. DHCPDISCOVER - First messag generated between server & client (342 or 576 bytes).
+3. DHCPDISCOVER - First message generated between server & client (342 or 576 bytes).
 4. DHCPDECLINE - If IP address already in use, DHCP declines server.
 5. DHCPRELEASE - Client sends DHCP release packet to server to release IP address & cancel any remaining lease time.
 6. DHCPINFORM - Domain name.
@@ -35,6 +35,14 @@ Practical No: 1
 
 2. Then we need to configure our dhcpd.conf by directly editing through a path, the path is given below: 
    $sudo nano /etc/dhcp/dhcpd.conf
+   
+   default-lease-time 600;
+   max-lease-time 7200;
+
+   subnet ip netmask broadcast {
+   range 192.168.1.150 192.168.1.200;
+   option routers 192.168.1.254;
+   }
 
 3. To know about ip address of our machine the following command can be given as: 
    shibu@kali:~$ ip a	(OR)
@@ -42,8 +50,21 @@ Practical No: 1
 
 4. Then we configure the subnet and the netmask, after configuring it then save the file and exit. (press[esc] and :wq!)
 
-5. To enable the services, use the command given below: 
+5. Now we have to edit /etc/default/isc-dhcp-server:
+   shibu@kali:~$ sudo vi /etc/default/isc-dhcp-server
+   
+    INTERFACESv4: "eth0"
+    
+    shibu@kali:~$ cat /etc/default/isc-dhcp-server
+
+6. To enable the services, use the command given below: 
    shibu@kali:~$ sudo systemctl enable isc-dhcp-server.service
 
-6. Then start the service by typing the command below: 
+7. Then start the service by typing the command below: 
    shibu@kali:~$ sudo systemctl start isc-dhcp-server.service
+   
+8. Then check status the service by typing the command below: 
+   shibu@kali:~$ sudo systemctl status isc-dhcp-server.service
+   
+9. Now to test the DHCP:
+   shibu@kali:~$ sudo dhcpd -T eth0
