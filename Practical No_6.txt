@@ -3,7 +3,6 @@ Practical No: 6
 
 • Aim: Configure NTP, Install and Configure NTP Server, Configure NTP Client.
 
-
 • Description:
 
 > NTP- (Port number - 123)
@@ -39,7 +38,6 @@ d. NTP is highly scalable:- A synchronization network may consist of several ref
 
 e. Having available several time sources, NTP can select the best candidates to build its estimate of the current time. 
    The protocol is highly accurate, using a resolution of less than a nanosecond (about 2^-32 seconds). 
-
 
 
 • Steps and Commands:
