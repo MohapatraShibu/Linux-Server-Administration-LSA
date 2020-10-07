@@ -68,7 +68,7 @@ e. Having available several time sources, NTP can select the best candidates to 
 8. Now we need to configure NTP:
    shibu@kali:~$ sudo vim /etc/ntp.conf
 
-- [Refer Practical_Output]
+- [Refer Practical_Output Folder]
 - After opening ntp.conf file scroll down and see-
   # You need to talk to an NTP server or two (or three)
 
