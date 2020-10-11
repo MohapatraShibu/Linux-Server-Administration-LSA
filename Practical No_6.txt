@@ -49,10 +49,10 @@ e. Having available several time sources, NTP can select the best candidates to 
    shibu@kali:~$ uname -a
 
 3. Command to install NTP:
-   shibu@kali:~$ sudo install ntp
+   shibu@kali:~$ sudo apt install ntp
 
 4. Command to install SNTP:
-   shibu@kali:~$ sudo install sntp
+   shibu@kali:~$ sudo apt install sntp
 
 5. To check the version:
    shibu@kali:~$ sudo sntp --version
@@ -60,10 +60,10 @@ e. Having available several time sources, NTP can select the best candidates to 
    shibu@kali:~$ ls -lrth *ntp.conf*
 
 6. Then start the service: 
-   shibu@kali:~$ sudo system start ntp
+   shibu@kali:~$ sudo systemctl start ntp
 
 7. To check the status:
-   shibu@kali:~$ sudo system status ntp
+   shibu@kali:~$ sudo systemctl status ntp
 
 8. Now we need to configure NTP:
    shibu@kali:~$ sudo vim /etc/ntp.conf
@@ -79,10 +79,10 @@ e. Having available several time sources, NTP can select the best candidates to 
    shibu@kali:~$ cat ntp.conf
 
 10. Then restart the service: 
-    shibu@kali:~$ sudo system restart ntp
+    shibu@kali:~$ sudo systemctl restart ntp
 
 11. To check the status:
-    shibu@kali:~$ sudo system status ntp
+    shibu@kali:~$ sudo systemctl status ntp
 
 12. Now to query NTP and check it's connection:
     shibu@kali:~$ sudo ntpq -p
