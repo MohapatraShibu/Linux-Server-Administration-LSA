@@ -5,6 +5,7 @@ Practical No: 8
 
 
 • Description:
+
 1. NIS stands for Network Information Systems.
 2. NIS, or Network Information Systems, is a network service that allows authentication and login information to be stored on a centrally located server. 
 3. This includes the username and password database for login authentication, database of user groups, and the locations of home directories.
@@ -106,7 +107,9 @@ NISCLIENT=false
     shibu@kali:~$ sudo /usr/lib/yp/ypinit -m
 
 19. Now configure nsswitch.conf for NIS:
-- The Name Service Switch (NSS) configuration file, /etc/nsswitch.conf, is used by the GNU C Library and certain other applications to determine the sources from which to obtain name-service information in a range of categories, and in what order.  
+- The Name Service Switch (NSS) configuration file, /etc/nsswitch.conf, is used by the GNU C Library and certain other applications 
+  to determine the sources from which to obtain name-service information in a range of categories, and in what order.  
+  
 - Each category of information is identified by a database name.
 
     shibu@kali:~$ sudo nano /etc/nsswitch
