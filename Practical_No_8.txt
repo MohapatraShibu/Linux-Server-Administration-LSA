@@ -112,7 +112,7 @@ NISCLIENT=false
   
 - Each category of information is identified by a database name.
 
-    shibu@kali:~$ sudo nano /etc/nsswitch
+    shibu@kali:~$ sudo nano /etc/nsswitch.conf
 
 20. Now reboot Kali and Login with the user that we have added above:
     shibu@kali:~$ sudo reboot
